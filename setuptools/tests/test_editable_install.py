@@ -142,6 +142,10 @@ def test_editable_with_pyproject(tmp_path, venv, files, editable_opts):
         *editable_opts,
     ]
     print(venv.run(cmd))
+    print(venv.run(['pip', 'list']))
+    print(venv.run(['python', '-c', 'import distutils; print(distutils)']))
+    # print(venv.run(['python', '-c', 'import packaging; print(packaging)']))
+    assert False
 
     cmd = ["python", "-m", "mypkg"]
     assert venv.run(cmd).strip() == "3.14159.post0 Hello World"

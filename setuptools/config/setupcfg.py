@@ -77,6 +77,8 @@ def read_configuration(
     from setuptools.dist import Distribution
 
     dist = Distribution()
+    print(dist.metadata.version)
+    raise KeyError
     filenames = dist.find_config_files() if find_others else []
     handlers = _apply(dist, filepath, filenames, ignore_option_errors)
     return configuration_to_dict(handlers)
@@ -290,6 +292,10 @@ class ConfigHandler(Generic[Target]):
             current_value = getattr(target_obj, option_name)
         except AttributeError as e:
             raise KeyError(option_name) from e
+
+        if option_name == "version":
+            print("afj na;i: ", current_value)
+            print(target_obj, option_name)
 
         if current_value:
             # Already inhabited. Skipping.

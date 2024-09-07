@@ -15,6 +15,7 @@ from .config import PyPIRCCommand
 from .debug import DEBUG
 
 # Mainly import these so setup scripts can "from distutils.core import" them.
+print("from .dist import Distribution")
 from .dist import Distribution
 from .errors import (
     CCompilerError,

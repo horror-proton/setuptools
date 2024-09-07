@@ -291,7 +291,9 @@ class Distribution(_Distribution):
 
         self._set_metadata_defaults(attrs)
 
+        print("s.m.v=", self.metadata.version)
         self.metadata.version = self._normalize_version(self.metadata.version)
+        print("s.m.v=", self.metadata.version)
         self._finalize_requires()
 
     def _validate_metadata(self):

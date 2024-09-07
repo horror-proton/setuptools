@@ -19,6 +19,7 @@ sys.path.extend(((vendor_path := os.path.join(os.path.dirname(os.path.dirname(__
 # workaround for #4476
 sys.modules.pop('backports', None)
 
+print("importing _distutils_hack")
 import _distutils_hack.override  # noqa: F401
 
 from . import logging, monkey

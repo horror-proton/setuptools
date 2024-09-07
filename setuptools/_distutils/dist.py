@@ -13,7 +13,9 @@ import sys
 import warnings
 from collections.abc import Iterable
 from email import message_from_file
-
+print("import packaging")
+import packaging
+print(packaging)
 from packaging.utils import canonicalize_name, canonicalize_version
 
 from ._log import log

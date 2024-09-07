@@ -9,6 +9,7 @@ import setuptools.package_index
 
 import distutils.errors
 
+import traceback
 
 class TestPackageIndex:
     def test_regex(self):
@@ -252,6 +253,10 @@ class TestContentCheckers:
 
 class TestPyPIConfig:
     def test_percent_in_password(self, tmp_home_dir):
+        print("tmp_home_dir: ", tmp_home_dir)
+        print(traceback.format_stack())
+        assert False
+        assert False
         pypirc = tmp_home_dir / '.pypirc'
         pypirc.write_text(
             cleandoc(

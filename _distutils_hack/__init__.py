@@ -69,7 +69,9 @@ def ensure_local_distutils():
     # With the DistutilsMetaFinder in place,
     # perform an import to cause distutils to be
     # loaded from setuptools._distutils. Ref #2906.
+    print("ensure local distutils")
     with shim():
+        print("ensure local distutils 2")
         importlib.import_module('distutils')
 
     # check that submodules load as expected
@@ -85,7 +87,9 @@ def do_override():
     See https://github.com/pypa/setuptools/issues/417#issuecomment-392298401
     for more motivation.
     """
+    print("do override")
     if enabled():
+        print("do override 2")
         warn_distutils_present()
         ensure_local_distutils()
 
